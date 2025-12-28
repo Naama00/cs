@@ -40,11 +40,5 @@ internal class CustomerImplementation : ICustomer
         DataSource.Customers.RemoveAt(itemIndex);
     }
 
-    public void PrintAll()
-    {
-        foreach(var customer in DataSource.Customers)
-        {
-            Console.WriteLine(customer?.Id+" "+customer?.CustomerName+" "+customer?.PhoneNumber+" "+customer?.Address);
-        }
-    }
+   
 }

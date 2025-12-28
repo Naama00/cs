@@ -45,11 +45,11 @@ public static class Initialization
 
         // יצירת כלבים
         foreach (var name in dogNames)
-            product?.Create(new() { Id = DataSource.Config.ProductId, Name = name, Category = CATEGORIES.DOGS, Price = 500, Quantity = 20 });
+            product?.Create(new() { Id = DataSource.Config.ProductId, Name = name, Category = Categories.DOGS, Price = 500, Quantity = 20 });
 
         // יצירת חתולים
         foreach (var name in catNames)
-            product?.Create(new() { Id = DataSource.Config.ProductId, Name = name, Category = CATEGORIES.CATS, Price = 350, Quantity = 15 });
+            product?.Create(new() { Id = DataSource.Config.ProductId, Name = name, Category = Categories.CATS, Price = 350, Quantity = 15 });
     }
 
     private static void CreateSales()

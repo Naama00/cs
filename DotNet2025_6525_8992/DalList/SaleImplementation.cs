@@ -39,11 +39,4 @@ internal class SaleImplementation : ISale
         DataSource.Sales.RemoveAt(itemIndex);
     }
 
-    public void PrintAll()
-    {
-        foreach(var sale in DataSource.Sales)
-        {
-            Console.WriteLine(sale?.Id + " " + sale?.ProductId + " " + sale?.RequiredQuantity+" "+sale?.DiscountedPrice+" "+sale?.IsForClubMembers.ToString());
-        }
-    }
 }
