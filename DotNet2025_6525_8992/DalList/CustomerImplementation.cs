@@ -1,16 +1,15 @@
 ﻿using DO;
 using DalApi;
-
+using static Dal.DataSource;
 
 namespace Dal;
-
 internal class CustomerImplementation : ICustomer
 {
     public int Create(Customer item)
     {
-
-        DataSource.Customers.Add(item);
-        return item.Id;
+        Customer finalizedItem = item with { Id = Config.CustomerId };
+        DataSource.Customers.Add(finalizedItem);
+        return finalizedItem.Id;
     }
 
     public Customer? Read(int id)

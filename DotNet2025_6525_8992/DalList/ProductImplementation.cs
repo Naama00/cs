@@ -1,5 +1,6 @@
 ﻿using DalApi;
 using DO;
+using static Dal.DataSource;
 
 namespace Dal;
 
@@ -7,9 +8,9 @@ internal class ProductImplementation : IProduct
 {
     public int Create(Product item)
     {
-
-        DataSource.Products.Add(item);
-        return item.Id;
+        Product finalizedItem = item with { Id = Config.ProductId };
+        DataSource.Products.Add(finalizedItem);
+        return finalizedItem.Id;
     }
 
     public Product? Read(int id)
